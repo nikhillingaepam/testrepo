@@ -23,7 +23,7 @@ jobs:
           script: |
             github.rest.repos.createCommitStatus({
                state: 'success',
-               sha: ${{ github.sha }},
+               sha: '${{ github.sha }}',
                owner: 'nikhillingaepam',
                repo: 'testrepo'
             })
