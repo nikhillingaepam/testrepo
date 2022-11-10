@@ -21,7 +21,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUBTOKEN }}
           script: |
-            github.rest.statuses.createStatus({
+            github.rest.repos.createCommitStatus({
                state: 'success',
                sha: ${{ github.sha }},
                owner: 'nikhillingaepam',
