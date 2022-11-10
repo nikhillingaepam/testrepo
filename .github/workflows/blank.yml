@@ -22,10 +22,9 @@ jobs:
           github-token: ${{ secrets.GITHUBTOKEN }}
           script: |
             github.rest.statuses.createStatus({
-               description: 'Validation Successful',
                state: 'success',
                sha: ${{ github.sha }},
                owner: 'nikhillingaepam',
-               repo: 'testrepo'         
+               repo: 'testrepo'
             })
      
