@@ -22,9 +22,10 @@ jobs:
           github-token: ${{ secrets.GITHUBTOKEN }}
           script: |
             github.rest.repos.createStatus({
-               context: 'Validation Successful',
                description: 'Validation Successful',
                state: 'success',
-               sha: ${{ github.sha }}
+               sha: ${{ github.sha }},
+               owner: context.repo.owner,
+              repo: context.repo.repo              
             })
      
