@@ -17,15 +17,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Commit status Success
-        if: ${{ always() && (steps.validation.outcome == 'success') }}
         uses: actions/github-script@v5
         with:
           github-token: ${{ secrets.GITHUBTOKEN }}
           script: |
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: process.env.BODY
+            github.rest.repo.createStatus({
+               context: 'Validation Successful',
+               description: 'Validation Successful',
+               state: 'success',
+               sha: ${{ github.sha }}
             })
      
