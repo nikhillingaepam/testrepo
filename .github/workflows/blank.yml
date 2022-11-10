@@ -25,7 +25,7 @@ jobs:
                description: 'Validation Successful',
                state: 'success',
                sha: ${{ github.sha }},
-               owner: context.repo.owner,
-              repo: context.repo.repo              
+               owner: ${{ context.repo.owner }},
+               repo: ${{ context.repo.repo }}           
             })
      
