@@ -21,7 +21,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUBTOKEN }}
           script: |
-            github.rest.repos.createStatus({
+            github.rest.statuses.createStatus({
                description: 'Validation Successful',
                state: 'success',
                sha: ${{ github.sha }},
